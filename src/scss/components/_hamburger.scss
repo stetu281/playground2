@@ -49,4 +49,8 @@
       }
     }
   }
+
+  @include breakpoint(768px) {
+    display: none;
+  }
 }

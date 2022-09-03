@@ -73,4 +73,71 @@
       }
     }
   }
+
+  @include breakpoint(768px) {
+    width: unset;
+    height: unset;
+    margin: unset;
+    position: unset;
+    padding: unset;
+
+    ul {
+      display: flex;
+      align-items: center;
+
+      li {
+        padding: 0 0.75rem;
+
+        &:not(:last-child) {
+          a {
+            font-size: 1rem;
+            overflow: hidden;
+            display: inline;
+
+            &::after {
+              width: 0;
+              height: 3px;
+              top: 25px;
+              right: 0;
+              left: unset;
+              z-index: 0;
+              transition: width 0.2s ease-in-out;
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+              &::after {
+                width: 110%;
+                left: 0;
+                right: auto;
+              }
+            }
+          }
+        }
+
+        &[aria-current="page"] {
+          a {
+            &::after {
+              width: 110%;
+            }
+          }
+        }
+
+        &:nth-last-child(2) {
+          border: unset;
+          padding: 0 1.5rem 0 0.75rem;
+          border-right: 5px solid $font-color;
+        }
+
+        &:last-child {
+          a {
+            display: block;
+            font-size: 1rem;
+            padding: 0 0 0 0.75rem;
+          }
+        }
+      }
+    }
+  }
 }
