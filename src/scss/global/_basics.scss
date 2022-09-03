@@ -8,5 +8,18 @@ body {
 .content {
   margin: 0 auto;
   width: 90%;
+  max-width: 1400px;
+}
+
+.maincontent {
+  margin: 0 auto;
+  width: 90%;
   max-width: 1600px;
+  display: grid;
+  gap: 1rem;
+
+  @include breakpoint(768px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
 }
