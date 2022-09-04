@@ -1,0 +1,101 @@
+.scroll {
+  padding: 0;
+  height: 450px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: block;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  @include breakpoint(768px) {
+    grid-column: 1 / 5;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__container {
+    height: 1500px;
+    position: relative;
+  }
+
+  &__circle {
+    display: block;
+    width: 4px;
+    height: 4px;
+    opacity: 0;
+    background-color: $green;
+    border-radius: 50%;
+    position: sticky;
+    top: 50px;
+    left: 50px;
+    transition: border-radius 1s ease-in-out, background-color 3s ease;
+
+    &--ani {
+      border-radius: 10%;
+      background-color: $orange;
+    }
+  }
+
+  &__circle2 {
+    display: block;
+    width: 4px;
+    aspect-ratio: 1 / 1;
+    opacity: 0;
+    position: sticky;
+    top: 50px;
+    right: 50px;
+    background-color: $red;
+    border-radius: 50%;
+    transform: rotate(0);
+    transition: border-radius 2s, opacity 1s;
+
+    &--ani {
+      border-radius: 5px;
+      opacity: 1;
+    }
+  }
+
+  &__inst {
+    margin-left: 20px;
+    position: sticky;
+    top: 50%;
+    font-size: 1.5rem;
+  }
+
+  &__headline {
+    position: sticky;
+    top: 25%;
+    left: 100px;
+    transform: translateX(100%);
+    font-size: 10rem;
+    font-weight: 800;
+  }
+
+  &__content {
+    width: 100%;
+    height: 2100px;
+    position: relative;
+    z-index: 100;
+    background-color: $background-elements;
+
+    @include breakpoint(768px) {
+      height: 1100px;
+    }
+
+    @include breakpoint(1024px) {
+      height: 1000px;
+    }
+
+    p {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px 10px;
+
+      &:first-child {
+        padding-top: 50px;
+      }
+    }
+  }
+}

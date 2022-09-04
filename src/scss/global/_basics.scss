@@ -21,7 +21,6 @@ body {
 
   @include breakpoint(768px) {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(10, 1fr);
     gap: 2rem;
   }
 }
