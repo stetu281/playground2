@@ -15,11 +15,11 @@
       position: absolute;
       border-radius: 50%;
       border: 2px solid $red;
-      animation: border 2.1s forwards 2.1s infinite;
+      animation: spinner1-border 2.1s forwards 2.1s infinite;
     }
   }
 
-  @keyframes border {
+  @keyframes spinner1-border {
     0% {
       border-color: $font-color;
       opacity: 1;
@@ -42,7 +42,7 @@
     border-radius: 100px;
     position: absolute;
     transform-origin: top;
-    animation: rotate 2.1s ease-in-out infinite;
+    animation: spinner1-rotate 2.1s ease-in-out infinite;
 
     &:nth-last-of-type(even) {
       background-color: $red;
@@ -73,7 +73,7 @@
     }
   }
 
-  @keyframes rotate {
+  @keyframes spinner1-rotate {
     0% {
       transform: rotate(0);
     }
@@ -99,7 +99,7 @@
     margin: 0 5px;
     background-color: $font-color;
     border-radius: 50%;
-    animation: dots 1.6s ease infinite;
+    animation: spinner1-dots 1.6s ease infinite;
 
     &:nth-child(2) {
       animation-delay: 0.4s;
@@ -111,7 +111,7 @@
     }
   }
 
-  @keyframes dots {
+  @keyframes spinner1-dots {
     0% {
       opacity: 0;
     }
