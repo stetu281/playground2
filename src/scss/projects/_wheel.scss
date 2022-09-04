@@ -1,0 +1,43 @@
+$s: 50deg;
+
+.wheel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__container {
+    width: 280px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    transition: transform cubic-bezier(0.47, 0.02, 0.21, 1.03);
+  }
+
+  &__part {
+    position: absolute;
+    width: 100px;
+    aspect-ratio: 1 / 1;
+    border: 1px solid $background-elements;
+    left: 50%;
+    top: 50%;
+    transform-origin: left top;
+
+    @for $i from 0 through 8 {
+      &:nth-of-type(#{$i + 1}) {
+        background-color: rgb(66, 255, 28);
+        filter: hue-rotate(#{$i * 40}deg);
+        transform: rotate(#{$i * 40}deg) skew($s);
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: 2px solid $green;
+    border-radius: 5px;
+    color: $green;
+  }
+}
