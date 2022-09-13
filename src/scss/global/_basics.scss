@@ -17,11 +17,14 @@ body {
   width: 90%;
   max-width: 1600px;
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
 
   @include breakpoint(768px) {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint(1024px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

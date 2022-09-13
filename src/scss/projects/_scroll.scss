@@ -7,10 +7,6 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 
-  @include breakpoint(768px) {
-    grid-column: 1 / 5;
-  }
-
   &::-webkit-scrollbar {
     display: none;
   }
@@ -97,5 +93,13 @@
         padding-top: 50px;
       }
     }
+  }
+
+  @include breakpoint(768px) {
+    grid-column: 1 / 3;
+  }
+
+  @include breakpoint(1024px) {
+    grid-column: 2 / 4;
   }
 }
