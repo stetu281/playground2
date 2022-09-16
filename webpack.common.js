@@ -10,6 +10,10 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: "./src/html/index.html",
     }),
+    new HTMLWebpackPlugin({
+      filename: "playground.html",
+      template: "./src/html/en/playground.html",
+    }),
     new CleanWebpackPlugin(),
     new WebpackPrettierPlugin(),
   ],
