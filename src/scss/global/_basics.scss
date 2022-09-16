@@ -45,6 +45,24 @@ body {
     line-height: 160%;
   }
 
+  &__button {
+    padding: 0.5rem 1.5rem;
+    margin-top: 2rem;
+    display: inline-block;
+    border: 2px solid $green;
+    background-color: $green;
+    color: $dark-bg;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $green;
+      background-color: $dark-bg;
+      border-radius: 5px;
+    }
+  }
+
   @include breakpoint(768px) {
     &__title {
       font-size: 5rem;
