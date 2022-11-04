@@ -1,0 +1,160 @@
+.guitar {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  overflow: hidden;
+
+  &__btn {
+    padding: 0.5rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    background-color: $dark-bg;
+    border-radius: 100%;
+    z-index: 100;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+
+    object-fit: cover;
+  }
+
+  @keyframes bgSlide {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    55% {
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 25%;
+    opacity: 0;
+    transform: translateX(-100%);
+    background-color: #ffc22b;
+
+    &--slideIn {
+      animation: bgSlide 2s ease-out 3s forwards;
+    }
+  }
+
+  @keyframes titleanimation {
+    65% {
+      transform: translateY(30px);
+      filter: blur(5px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+  &__h2 {
+    width: 200px;
+    position: absolute;
+    top: 35%;
+    left: 6%;
+    font-size: 2.25rem;
+    color: #29292f;
+    font-family: "Urbanist", sans-serif;
+    transform: translateY(30px);
+    opacity: 0;
+
+    &--animate {
+      animation: titleanimation 5s ease-out 0s forwards;
+    }
+  }
+
+  @keyframes clearup {
+    50% {
+      transform: translateY(-30px) scale(2);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  &__h3 {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    font-size: 2.75rem;
+    color: rgba(black, 0.05);
+    opacity: 0;
+    filter: blur(100px);
+    transform: translateY(-30px);
+
+    &--clearup {
+      animation: clearup 5s linear 0s forwards;
+    }
+  }
+
+  @include breakpoint(500px) {
+    &__h2 {
+      font-size: 3.5rem;
+    }
+
+    &__h3 {
+      font-size: 3.5rem;
+    }
+  }
+
+  @include breakpoint(768px) {
+    grid-column: 1 / 3;
+
+    &__h2 {
+      width: 300px;
+      font-size: 5rem;
+      top: 30%;
+    }
+
+    &__h3 {
+      font-size: 6rem;
+      line-height: 100%;
+      top: 3%;
+    }
+  }
+
+  @include breakpoint(950px) {
+    &__h2 {
+      width: 450px;
+      font-size: 7.5rem;
+      top: 25%;
+    }
+
+    &__h3 {
+      font-size: 9rem;
+    }
+  }
+}

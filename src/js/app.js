@@ -1,6 +1,7 @@
 import css from "../scss/main.scss";
 import { header } from "./components/header";
 import { scroll } from "./projects/scroll";
+import { guitar } from "./projects/guitar";
 import { wheel } from "./projects/wheel";
 import { gradient } from "./projects/gradient";
 import { animal } from "./projects/animal";
@@ -12,3 +13,4 @@ wheel();
 gradient();
 animal();
 digitalclock();
+guitar();
