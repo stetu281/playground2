@@ -4,13 +4,13 @@ import { scroll } from "./projects/scroll";
 import { guitar } from "./projects/guitar";
 import { wheel } from "./projects/wheel";
 import { gradient } from "./projects/gradient";
-import { animal } from "./projects/animal";
+/* import { animal } from "./projects/animal"; */
 import { digitalclock } from "./projects/digitalclock";
 
 header();
 scroll();
 wheel();
 gradient();
-animal();
+/* animal(); */ //API gone
 digitalclock();
 guitar();
